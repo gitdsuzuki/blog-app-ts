@@ -1,14 +1,6 @@
 import Dayjs from 'dayjs'
 import { Link } from 'react-router-dom'
-
-type Post = {
-  id: number;
-  title: string;
-  thumbnailUrl: string;
-  createdAt: Date;
-  categories: Array<string>;
-  content: string;
-}
+import { Post } from '../types/index.ts'
 
 const PostBox: React.FC<{ post: Post }> = ({post}) => {
   const { id, title, createdAt, categories, content } = post

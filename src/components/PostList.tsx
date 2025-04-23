@@ -1,18 +1,6 @@
 import { useState, useEffect } from 'react'
 import PostBox from './PostBox'
-
-type Post = {
-  id: number;
-  title: string;
-  thumbnailUrl: string;
-  createdAt: Date;
-  categories: Array<string>;
-  content: string;  
-}
-
-type Posts = {
-  posts: Array<Post>
-}
+import { Post, PostsResponse } from '../types/index.ts'
 
 const PostList: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([])
@@ -22,7 +10,7 @@ const PostList: React.FC = () => {
     const fetcher = async () => {
       setLoading(true)
       const response: Response = await fetch("https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts")
-      const data = await response.json() as Posts
+      const data = await response.json() as PostsResponse
       setPosts(data.posts)
       setLoading(false)
     }

@@ -1,19 +1,7 @@
 import Dayjs from 'dayjs'
 import {useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-
-type Post = {
-  id: number;
-  title: string;
-  thumbnailUrl: string;
-  createdAt: Date;
-  categories: Array<string>;
-  content: string;
-}
-
-type PostData = {
-  post: Post;
-}
+import { Post, PostResponse } from '../types/index.ts'
 
 const PostDetails: React.FC = () => {
   const { id } = useParams<string>()
@@ -24,7 +12,7 @@ const PostDetails: React.FC = () => {
     const fetcher = async () => {
       setLoading(true)
       const res: Response = await fetch(`https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}`)
-      const data = await res.json() as PostData
+      const data = await res.json() as PostResponse
       setPost(data.post)
       setLoading(false)
     }
