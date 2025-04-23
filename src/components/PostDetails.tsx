@@ -17,7 +17,7 @@ type PostData = {
 
 const PostDetails: React.FC = () => {
   const { id } = useParams<string>()
-  const [post, setPost] = useState<Post>()
+  const [post, setPost] = useState<Post | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
