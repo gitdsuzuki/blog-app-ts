@@ -14,7 +14,7 @@ type Posts = {
   posts: Array<Post>
 }
 
-const PostList = () => {
+const PostList: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -33,7 +33,7 @@ const PostList = () => {
 
   return (
     <>
-      {posts.map((post: Post) => <PostBox key={post.id} {...post} />)}
+      {posts.map((post: Post) => <PostBox key={post.id} post={post} />)}
     </>
   )
 }

@@ -4,7 +4,7 @@ import PostList from './components/PostList'
 import PostDetails from './components/PostDetails'
 import Contact from './components/Contact'
 
-const App = () => {
+const App: React.FC = () => {
 
   return (
     <>

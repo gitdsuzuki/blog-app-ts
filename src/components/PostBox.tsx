@@ -10,7 +10,7 @@ type Post = {
   content: string;
 }
 
-const PostBox = (post: Post) => {
+const PostBox: React.FC<{ post: Post }> = ({post}) => {
   const { id, title, createdAt, categories, content } = post
 
   return (

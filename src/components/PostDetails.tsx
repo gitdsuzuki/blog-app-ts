@@ -15,7 +15,7 @@ type PostData = {
   post: Post;
 }
 
-const PostDetails = () => {
+const PostDetails: React.FC = () => {
   const { id } = useParams<string>()
   const [post, setPost] = useState<Post>()
   const [loading, setLoading] = useState<boolean>(false)

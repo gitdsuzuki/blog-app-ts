@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Contact = () => {
+const Contact: React.FC = () => {
 
   const [name, setName] = useState<string>('')
   const [email, setEmail] = useState<string>('')
